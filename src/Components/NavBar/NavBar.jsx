@@ -174,7 +174,7 @@ const NavBar = () => {
           <Typography
             as="a"
             href="#"
-            className="mr-4 ml-2 lg:ml-16 font-poppins cursor-pointer py-1.5 font-bold text-2xl text-[#0B2B4F] "
+            className="mr-4 ml-2 lg:ml-16 font-poppins cursor-pointer py-1.5 font-bold text-base md:text-2xl lg:text-2xl text-[#0B2B4F] "
           >
             Artistry Avenue
           </Typography>
@@ -188,12 +188,12 @@ const NavBar = () => {
           </div> */}
           <div>
             <Button size="sm" variant="text">
-              <span className="text-[#0B2B4F] text-sm">Log In</span>
+              <span className="text-[#0B2B4F] text-xs md:text-sm lg:text-sm">Log In</span>
             </Button>
             <span>/</span>
             <NavLink to="/register">
               <Button size="sm" variant="text">
-                <span className="text-[#0B2B4F] text-sm">Register</span>
+                <span className="text-[#0B2B4F] text-xs md:text-sm lg:text-sm">Register</span>
               </Button>
             </NavLink>
           </div>

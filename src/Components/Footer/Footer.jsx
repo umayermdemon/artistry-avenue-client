@@ -6,14 +6,14 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
     <div>
-       <footer className="max-w-full mx-2  bg-white p-8 ">
+       <footer className="max-w-full mx-2 border border-t-[#E5B7B7] bg-white p-8 ">
       <div className="flex flex-row flex-wrap items-center justify-center gap-y-4 gap-x-12 bg-white text-center md:justify-between">
      
       <Typography
               as="a"
               href="#"
               color="blue-gray"
-              className="font-bold font-poppins text-2xl transition-colors hover:text-[#E5B7B7] focus:text-red-200"
+              className="font-bold font-poppins text-2xl transition-colors hover:text-[#E5B7B7] focus:text-blue-500"
             >
                Artistry Avenue
             </Typography>
@@ -23,27 +23,18 @@ const Footer = () => {
               as="a"
               href="#"
               color="blue-gray"
-              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+              className="font-normal transition-colors hover:text-[#E5B7B7] focus:text-blue-500"
             >
               About Us
             </Typography>
           </li>
+          
           <li>
             <Typography
               as="a"
               href="#"
               color="blue-gray"
-              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
-            >
-              License
-            </Typography>
-          </li>
-          <li>
-            <Typography
-              as="a"
-              href="#"
-              color="blue-gray"
-              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+              className="font-normal transition-colors hover:text-[#E5B7B7] focus:text-blue-500"
             >
               Contribute
             </Typography>
@@ -53,7 +44,7 @@ const Footer = () => {
               as="a"
               href="#"
               color="blue-gray"
-              className="font-normal transition-colors hover:text-blue-500 focus:text-blue-500"
+              className="font-normal transition-colors hover:text-[#E5B7B7] focus:text-blue-500"
             >
               Contact Us
             </Typography>

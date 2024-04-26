@@ -4,7 +4,7 @@ import { Button, Card, Checkbox, Input, Typography } from "@material-tailwind/re
 const Register = () => {
   return (
     <div >
-       <Card color="transparent" shadow={false} className="max-w-full rounded-none min-h-[calc(100vh-305px)] bg-white  items-center  py-4 mx-2" > 
+       <Card color="transparent" shadow={false} className="max-w-full rounded-none min-h-[calc(100vh-300px)] bg-white  items-center  py-4 mx-2" > 
       <Typography variant="h4" color="blue-gray">
         Register
       </Typography>
