@@ -20,6 +20,7 @@ const AddCraft = () => {
     const rating = form.rating.value;
     const price = form.price.value;
     const image = form.image.value;
+    const email = form.email.value;
     const stockStatus = form.stockStatus.value;
     const craft = {
       itemName,
@@ -31,6 +32,7 @@ const AddCraft = () => {
       price,
       image,
       stockStatus,
+      email
     };
     
 console.log(craft)
@@ -55,18 +57,18 @@ console.log(craft)
   };
   return (
     <div className="max-w-7xl mx-auto">
-      <form onSubmit={handleAdd} className=" p-20 rounded-md">
+      <form onSubmit={handleAdd} className=" p-8 md:p-20 lg:p-20 rounded-md">
         <div className="space-y-4">
-          <div className="flex gap-2">
+          <div className="md:flex lg:flex gap-2">
             <Input
               name="itemName"
               label="Item Name"
-              className="bg-white"
+              className="bg-white w-[360px] md:w-full lg:w-full "
               required
             />
            
             <select  name="subCategory"
-              className="rounded-md border border-gray-400  w-full bg-white ">
+              className="rounded-md border mt-2 md:mt-0 lg:mt-0 h-10 border-gray-400   bg-white w-[360px] md:w-full lg:w-full ">
               <option disabled selected>
               Subcategory Name
               </option>
@@ -82,13 +84,13 @@ console.log(craft)
             <Textarea
               name="description"
               label="Short Description"
-              className="bg-white"
+              className="bg-white w-[360px] md:w-full lg:w-full"
               required
             />
           </div>
-          <div className="flex gap-2">
+          <div className="md:flex lg:flex gap-2">
             <select  name="customization"
-              className="rounded-md border border-gray-400  w-full bg-white ">
+              className="rounded-md border  mb-2 md:mb-0 lg:mb-0 h-10 border-gray-400  bg-white w-[360px] md:w-full lg:w-full ">
               <option disabled selected>
               Customization
               </option>
@@ -98,24 +100,24 @@ console.log(craft)
             <Input
               name="processingTime"
               label="Processing Time"
-              className="bg-white"
+              className="bg-white w-[360px] md:w-full lg:w-full"
               required
             />
           </div>
-          <div className="flex gap-2">
-            <Input name="rating" label="Rating" className="bg-white" required />
-            <Input name="price" label="Price" className="bg-white" required />
+          <div className="md:flex lg:flex space-y-2 md:space-y-0 lg:space-y-0 gap-2">
+            <Input name="rating" label="Rating" className="bg-white w-[360px] md:w-full lg:w-full" required />
+            <Input name="price" label="Price" className="bg-white w-[360px] md:w-full lg:w-full" required />
           </div>
-          <div className="flex gap-2">
+          <div className="md:flex lg:flex space-y-2 md:space-y-0 lg:space-y-0 gap-2">
             <Input
               name="image"
               label="Photo Url"
-              className="bg-white"
+              className="bg-white w-[360px] md:w-full lg:w-full"
               required
             />
            
             <select  name="stockStatus"
-              className="rounded-md border border-gray-400  w-full bg-white ">
+              className="rounded-md border mt-2 md:mt-0 lg:mt-0 h-10 border-gray-400   bg-white w-[360px] md:w-full lg:w-full ">
               <option disabled selected>
               Stock Status
               </option>
@@ -123,11 +125,11 @@ console.log(craft)
               <option>Made to Order</option>
             </select>
           </div>
-          <div className="flex gap-2">
+          <div className="md:flex lg:flex space-y-2 md:space-y-0 lg:space-y-0 gap-2">
             <Input
               name="userName"
               label="User Name"
-              className="bg-white"
+              className="bg-white w-[360px] md:w-full lg:w-full"
               value={user.displayName}
               readOnly
             />
@@ -135,9 +137,9 @@ console.log(craft)
               type="email"
               name="email"
               label="User Email"
-              className="bg-white"
+              className="bg-white w-[360px] md:w-full lg:w-full"
               value={user.email}
-              readOnly
+              
             />
           </div>
           <div>
