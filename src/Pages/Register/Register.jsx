@@ -5,13 +5,16 @@ import {
   Input,
   Typography,
 } from "@material-tailwind/react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { updateProfile } from "firebase/auth";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
+  
+  const [showPassword, setShowPassword] = useState(false);
   const { createUser } = useContext(AuthContext);
   const navigate=useNavigate()
 
@@ -153,13 +156,21 @@ const Register = () => {
             <Input size="lg" label="Your Email" name="email" required />
 
             <Input size="lg" name="photoUrl" label="PhotoUrl" required />
+            <div className="relative">
             <Input
-              type="password"
+              type={showPassword ? "text" : "password"}
               size="lg"
               name="password"
               label="Password"
               required
             />
+            <span
+                className="absolute right-2 top-3"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </span>
+            </div>
           </div>
           <Checkbox
             name="terms"

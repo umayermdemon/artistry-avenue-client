@@ -1,17 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Button, Card, Input, Typography } from "@material-tailwind/react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
 
 const Login = () => {
-    const { signInUser,googleSignIn,githubSignIn } = useContext(AuthContext);
-    const location = useLocation();
-    console.log(location)
-    const navigate=useNavigate()
+  const [showPassword, setShowPassword] = useState(false);
+  const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const location = useLocation();
+  console.log(location);
+  const navigate = useNavigate();
 
   const handleLogIn = (e) => {
     e.preventDefault();
@@ -24,7 +25,6 @@ const Login = () => {
       .then((result) => {
         navigate(location?.state ? location.state : "/");
         if (result.user) {
-
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -64,94 +64,92 @@ const Login = () => {
       });
   };
 
-  const handleGoogleLogin=()=>{
+  const handleGoogleLogin = () => {
     googleSignIn()
-    .then((result) => {
-      navigate(location?.state ? location.state : "/");
-      if (result.user) {
+      .then((result) => {
+        navigate(location?.state ? location.state : "/");
+        if (result.user) {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            },
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Signed in successfully",
+          });
+        }
+      })
 
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-end",
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.onmouseenter = Swal.stopTimer;
-            toast.onmouseleave = Swal.resumeTimer;
-          },
-        });
-        Toast.fire({
-          icon: "success",
-          title: "Signed in successfully",
-        });
-      }
-    })
+      .catch((error) => {
+        if (error) {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            },
+          });
+          Toast.fire({
+            icon: "warning",
+            title: "Please provide valid email & password",
+          });
+        }
+      });
+  };
+  const handleGithubLogin = () => {
+    githubSignIn()
+      .then((result) => {
+        navigate(location?.state ? location.state : "/");
+        if (result.user) {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            },
+          });
+          Toast.fire({
+            icon: "success",
+            title: "Signed in successfully",
+          });
+        }
+      })
 
-    .catch((error) => {
-      if (error) {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-end",
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.onmouseenter = Swal.stopTimer;
-            toast.onmouseleave = Swal.resumeTimer;
-          },
-        });
-        Toast.fire({
-          icon: "warning",
-          title: "Please provide valid email & password",
-        });
-      }
-    });
-};
-  const handleGithubLogin=()=>{
-   githubSignIn()
-    .then((result) => {
-      navigate(location?.state ? location.state : "/");
-      if (result.user) {
-
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-end",
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.onmouseenter = Swal.stopTimer;
-            toast.onmouseleave = Swal.resumeTimer;
-          },
-        });
-        Toast.fire({
-          icon: "success",
-          title: "Signed in successfully",
-        });
-      }
-    })
-
-    .catch((error) => {
-      if (error) {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-end",
-          showConfirmButton: false,
-          timer: 3000,
-          timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.onmouseenter = Swal.stopTimer;
-            toast.onmouseleave = Swal.resumeTimer;
-          },
-        });
-        Toast.fire({
-          icon: "warning",
-          title: "Please provide valid email & password",
-        });
-      }
-    });
-};
+      .catch((error) => {
+        if (error) {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            },
+          });
+          Toast.fire({
+            icon: "warning",
+            title: "Please provide valid email & password",
+          });
+        }
+      });
+  };
 
   return (
     <div>
@@ -171,7 +169,21 @@ const Login = () => {
           <div className="mb-1 flex flex-col gap-6">
             <Input type="email" size="lg" label="Your Email" name="email" />
 
-            <Input type="password" size="lg" label="Password" name="password" />
+            <div className="relative">
+              <Input
+                type={showPassword ? "text" : "password"}
+                size="lg"
+                name="password"
+                label="Password"
+                required
+              />
+              <span
+                className="absolute right-2 top-3"
+                onClick={() => setShowPassword(!showPassword)}
+              >
+                {showPassword ? <FaEye /> : <FaEyeSlash />}
+              </span>
+            </div>
           </div>
 
           <Button
@@ -197,11 +209,17 @@ const Login = () => {
 
         <div className="flex flex-row gap-6 justify-center items-center mt-6">
           <h1>
-            <FcGoogle onClick={handleGoogleLogin} className="text-2xl cursor-pointer" />
+            <FcGoogle
+              onClick={handleGoogleLogin}
+              className="text-2xl cursor-pointer"
+            />
           </h1>
 
           <h1>
-            <FaGithub onClick={handleGithubLogin} className="text-2xl cursor-pointer" />
+            <FaGithub
+              onClick={handleGithubLogin}
+              className="text-2xl cursor-pointer"
+            />
           </h1>
         </div>
       </Card>

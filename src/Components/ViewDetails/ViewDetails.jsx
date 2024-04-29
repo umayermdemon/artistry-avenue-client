@@ -11,8 +11,8 @@ const ViewDetails = () => {
   console.log(details)
 
   useEffect(() => {
-    const findEstate = crafts.find((craft) => craft._id === id);
-    setDetails(findEstate);
+    const findCraft = crafts.find((craft) => craft._id === id);
+    setDetails(findCraft);
   }, [crafts, id]);
   
   const {itemName, subCategory, price,customization, description,image, processingTime,

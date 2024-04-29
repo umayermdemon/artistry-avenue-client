@@ -104,9 +104,11 @@ function NavList() {
             </Typography>
           </NavLink>
 
-          <Typography className="font-medium  font-poppins text-base">
-            My Art & Craft List
-          </Typography>
+          <NavLink to="/myCraft">
+            <Typography className="font-medium  font-poppins text-base">
+              My Art & Craft List
+            </Typography>
+          </NavLink>
         </ul>
       </div>
 

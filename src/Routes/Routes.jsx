@@ -8,6 +8,7 @@ import AddCraft from "../Pages/AddCraft/AddCraft";
 import Home from "../Pages/Home/Home";
 import AllArts from "../Pages/AllArts/AllArts";
 import ViewDetails from "../Components/ViewDetails/ViewDetails";
+import MyCrafts from "../Pages/MyCrafts/MyCrafts";
 
 
 export const router=createBrowserRouter([
@@ -39,6 +40,11 @@ export const router=createBrowserRouter([
       {
         path:'/viewDetails/:id',
         element:<PrivateRoute><ViewDetails/></PrivateRoute>,
+        loader:()=>fetch("http://localhost:5000/crafts")
+      },
+      {
+        path:'/myCraft',
+        element:<PrivateRoute><MyCrafts/></PrivateRoute>,
         loader:()=>fetch("http://localhost:5000/crafts")
       },
     ]
