@@ -19,16 +19,16 @@ const ViewDetails = () => {
     rating,stockStatus  }=details || {}
   return (
     <div>
-       <Card className="max-w-full mx-2 my-1 rounded-none min-h-[calc(100vh-310px)] shadow-none flex-row">
+       <Card className="lg:max-w-full mx-2 my-1 rounded-none min-h-[calc(100vh-310px)] shadow-none lg:flex-row">
       <CardHeader
         shadow={false}
         floated={false}
-        className="m-2 w-2/5 shrink-0 rounded-none"
+        className="m-2 lg:w-2/5 shrink-0 rounded-none"
       >
         <img
           src={image}
           alt={itemName}
-          className="h-[600px] w-full object-cover"
+          className="h-[400px] md:h-[550px] lg:h-[600px] w-full  object-cover"
         />
       </CardHeader>
       <CardBody>

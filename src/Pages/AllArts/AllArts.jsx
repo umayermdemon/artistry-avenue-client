@@ -14,7 +14,7 @@ const AllArts = () => {
 
   return (
     <div>
-      <Card className="h-full max-w-full mx-2 overflow-scroll">
+      <Card className="h-full max-w-full mx-2 overflow-scroll lg:overflow-auto">
         <table className="w-full min-w-max table-auto text-left">
           <thead>
             <tr>
@@ -24,9 +24,8 @@ const AllArts = () => {
                   className="border-b border-blue-gray-100 bg-blue-gray-50 p-4"
                 >
                   <Typography
-                    variant="lg"
                     color="blue-gray"
-                    className="font-bold font-poppins text-blue-800 leading-none "
+                    className="font-bold font-poppins text-sm md:text-base lg:text-base text-blue-800 leading-none "
                   >
                     {head}
                   </Typography>
@@ -45,27 +44,24 @@ const AllArts = () => {
                 <tr key={itemName}>
                   <td className={classes}>
                     <Typography
-                      variant="h6"
                       color="blue-gray"
-                      className="font-normal"
+                      className="font-normal text-sm md:text-base lg:text-base"
                     >
                       {itemName}
                     </Typography>
                   </td>
                   <td className={`${classes} bg-blue-gray-50/50`}>
                     <Typography
-                      variant="h6"
                       color="blue-gray"
-                      className="font-normal"
+                      className="font-normal text-sm md:text-base lg:text-base"
                     >
                       {subCategory}
                     </Typography>
                   </td>
                   <td className={classes}>
                     <Typography
-                      variant="h6"
                       color="blue-gray"
-                      className="font-normal"
+                      className="font-normal text-sm md:text-base lg:text-base"
                     >
                       {price}
                     </Typography>
