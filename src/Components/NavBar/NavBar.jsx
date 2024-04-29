@@ -10,43 +10,43 @@ import {
   MenuList,
   Avatar,
   Tooltip,
+  Switch,
 } from "@material-tailwind/react";
 import { Bars2Icon } from "@heroicons/react/24/solid";
-import React, { useContext } from "react";
-import userImg from '/user.png'
+import React, { useContext} from "react";
+import userImg from "/user.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 function ProfileMenu() {
-  const {user,logOut}=useContext(AuthContext);
-  const navigate=useNavigate()
-  const {displayName,photoURL}=user
+  const { user, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const { displayName, photoURL } = user;
   const handleLogout = () => {
     logOut();
-   
+
     navigate("/");
   };
   return (
     <Tooltip content={displayName}>
       <Menu>
         <MenuHandler>
-         {
-          user.photoURL?
-          <Avatar
-          variant="circular"
-          size="sm"
-          alt="Profile Image"
-          className="cursor-pointer"
-          src={photoURL}
-        />
-        :
-        <Avatar
-        variant="circular"
-        size="sm"
-        alt="Profile Image"
-        className="cursor-pointer"
-        src={userImg}
-      />
-         }
+          {user.photoURL ? (
+            <Avatar
+              variant="circular"
+              size="sm"
+              alt="Profile Image"
+              className="cursor-pointer"
+              src={photoURL}
+            />
+          ) : (
+            <Avatar
+              variant="circular"
+              size="sm"
+              alt="Profile Image"
+              className="cursor-pointer"
+              src={userImg}
+            />
+          )}
         </MenuHandler>
         <MenuList>
           <hr className="my-2 border-blue-gray-50" />
@@ -65,7 +65,11 @@ function ProfileMenu() {
                 fill="#90A4AE"
               />
             </svg>
-            <Typography onClick={handleLogout} variant="small" className="font-medium">
+            <Typography
+              onClick={handleLogout}
+              variant="small"
+              className="font-medium"
+            >
               Sign Out
             </Typography>
           </MenuItem>
@@ -76,7 +80,8 @@ function ProfileMenu() {
 }
 
 function NavList() {
-  const {user}=useContext(AuthContext)
+  const { user } = useContext(AuthContext);
+ 
   return (
     <div className="flex  items-center  gap-96">
       <div>
@@ -99,8 +104,11 @@ function NavList() {
           </Typography>
         </ul>
       </div>
-      <div className="hidden lg:block">
-      {user ? (
+
+      <div className="hidden lg:block ">
+        <div className="flex flex-row gap-2">
+          <Switch />
+          {user ? (
             <ProfileMenu />
           ) : (
             <div>
@@ -121,6 +129,7 @@ function NavList() {
               </NavLink>
             </div>
           )}
+        </div>
       </div>
     </div>
   );
@@ -141,7 +150,7 @@ const NavBar = () => {
 
   return (
     <div className=" w-full sticky  top-0 z-50 p-2 ">
-      <Navbar className="max-w-full px-2 lg:px-24  py-4 lg:py-6 lg:pl-4">
+      <Navbar className="max-w-full rounded-none px-2 lg:px-24  py-4 lg:py-6 lg:pl-4">
         <div className="relative flex items-center justify-between text-[#0B2B4F]">
           <IconButton
             size="sm"
@@ -164,30 +173,32 @@ const NavBar = () => {
           <div className="hidden lg:block">
             <NavList />
           </div>
-          <div className="block lg:hidden ">
-          {user ? (
-            <ProfileMenu />
-          ) : (
-            <div>
-              <NavLink to="/login">
-                <Button size="sm" variant="text">
-                  <span className="text-[#0B2B4F] text-xs md:text-sm lg:text-sm">
-                    Log In
-                  </span>
-                </Button>
-              </NavLink>
-              <span>/</span>
-              <NavLink to="/register">
-                <Button size="sm" variant="text">
-                  <span className="text-[#0B2B4F] text-xs md:text-sm lg:text-sm">
-                    Register
-                  </span>
-                </Button>
-              </NavLink>
+          <div className="block lg:hidden">
+            <div className="flex flex-row gap-2">
+              <Switch />
+              {user ? (
+                <ProfileMenu />
+              ) : (
+                <div className="flex flow-row">
+                  <NavLink to="/login">
+                    <Button size="sm" variant="text">
+                      <span className="text-[#0B2B4F] text-xs md:text-sm lg:text-sm">
+                        Log In
+                      </span>
+                    </Button>
+                  </NavLink>
+                  <span>/</span>
+                  <NavLink to="/register">
+                    <Button size="sm" variant="text">
+                      <span className="text-[#0B2B4F] text-xs md:text-sm lg:text-sm">
+                        Register
+                      </span>
+                    </Button>
+                  </NavLink>
+                </div>
+              )}
             </div>
-          )}
           </div>
-          
         </div>
         <MobileNav open={isNavOpen} className="overflow-scroll">
           <NavList />
