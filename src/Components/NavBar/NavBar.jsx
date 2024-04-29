@@ -13,7 +13,7 @@ import {
   Switch,
 } from "@material-tailwind/react";
 import { Bars2Icon } from "@heroicons/react/24/solid";
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import userImg from "/user.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -81,7 +81,7 @@ function ProfileMenu() {
 
 function NavList() {
   const { user } = useContext(AuthContext);
- 
+
   return (
     <div className="flex  items-center  gap-96">
       <div>
@@ -92,13 +92,18 @@ function NavList() {
             </Typography>
           </NavLink>
 
-          <Typography className="font-medium  font-poppins text-base">
-            All Art & craft Items
-          </Typography>
+          <NavLink to="/allArt">
+            <Typography className="font-medium  font-poppins text-base">
+              All Art & craft Items
+            </Typography>
+          </NavLink>
 
-          <Typography className="font-medium  font-poppins text-base">
-            Add Craft Item
-          </Typography>
+          <NavLink to="/addCraft">
+            <Typography className="font-medium  font-poppins text-base">
+              Add Craft Item
+            </Typography>
+          </NavLink>
+
           <Typography className="font-medium  font-poppins text-base">
             My Art & Craft List
           </Typography>
@@ -150,7 +155,7 @@ const NavBar = () => {
 
   return (
     <div className=" w-full sticky  top-0 z-50 p-2 ">
-      <Navbar className="max-w-full rounded-none px-2 lg:px-24  py-4 lg:py-6 lg:pl-4">
+      <Navbar className="max-w-full rounded-none px-2 lg:px-24 py-1  md:py-4 lg:py-6 lg:pl-4">
         <div className="relative flex items-center justify-between text-[#0B2B4F]">
           <IconButton
             size="sm"

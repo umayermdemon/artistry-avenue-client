@@ -1,0 +1,35 @@
+[
+  {
+    "item_name": "Pencil Sketch Portrait",
+    "subcategory_name": "Portrait Drawing",
+    "image": "https://i.ibb.co/SPkJ2ry/Pencil-Sketch-Portrait.jpg",
+    "short_description": "A stunning portrait drawn with meticulous pencil strokes. This captivating artwork captures the essence of its subject through delicate and precise pencil work. Each stroke is carefully placed to convey the unique features, emotions, and personality of the individual depicted in the portrait. The artist's attention to detail brings the portrait to life, creating a lifelike representation that mesmerizes the viewer.The pencil sketch portrait is a timeless art form that has been cherished for centuries. It offers a classic and elegant way to immortalize loved ones, commemorate special occasions, or simply adorn your home with beautiful artwork. Whether it's a portrait of a family member, a beloved pet, or a cherished memory, a pencil sketch portrait adds a touch of sophistication and refinement to any space.With its exquisite craftsmanship and fine detail, this pencil sketch portrait is sure to become a cherished heirloom that can be passed down through generations. It serves as a timeless reminder of the people and moments that matter most in life. Available with customization options to tailor the portrait to your specific preferences, this masterpiece is a true work of art that will be treasured for years to come.",
+    "price": "$150",
+    "rating": 4.7,
+    "customization": "Yes",
+    "processing_time": "2-3 weeks",
+    "stock_status": "In stock"
+  },
+  {
+    "item_name": "Ink Outline Portrait",
+    "subcategory_name": "Portrait Drawing",
+    "image": "https://i.ibb.co/mJjpCqQ/Ink-Outline-Portrait.jpg",
+    "short_description": "A bold and expressive portrait outlined with ink. This captivating artwork combines bold lines and dynamic strokes to create a striking portrayal of its subject. The artist's skillful use of ink brings the portrait to life, capturing the essence of the individual with precision and flair.The ink outline portrait is a modern and contemporary take on traditional portraiture. It offers a fresh and unique perspective, with its bold lines and expressive style making a bold statement in any setting. Whether displayed in a home, office, or gallery, this artwork is sure to command attention and spark conversation.With its bold lines and expressive style, the ink outline portrait is perfect for those looking to make a statement with their artwork. It adds a touch of drama and flair to any space, infusing it with personality and character. Available in a range of sizes and customization options, this artwork can be tailored to suit your specific preferences and aesthetic tastes.",
+    "price": "$120",
+    "rating": 4.4,
+    "customization": "No",
+    "processing_time": "1-2 weeks",
+    "stock_status": "In stock"
+  },
+  {
+    "item_name": "Acrylic Portrait Canvas",
+    "subcategory_name": "Portrait Drawing",
+    "image": "https://i.ibb.co/NsYsPBg/Acrylic-Portrait-Canvas.jpg",
+    "short_description": "A vibrant portrait painted on a canvas using acrylic colors. This stunning artwork features bold colors, rich textures, and intricate details that bring the portrait to life. The artist's skillful use of acrylic paints creates a sense of depth and dimension, capturing the essence of the subject with vivid clarity.The acrylic portrait canvas is a versatile and dynamic art form that offers endless possibilities for creative expression. Its vibrant colors and bold textures make it a striking addition to any space, whether displayed in a living room, bedroom, or office. The durable nature of acrylic paints ensures that the artwork will remain vibrant and vivid for years to come, making it a timeless investment in beauty and creativity.With its bold colors and expressive style, the acrylic portrait canvas is sure to make a statement in any setting. Whether you're looking to add a pop of color to your home or office, or searching for the perfect gift for a loved one, this artwork is sure to impress. Available with customization options to tailor the portrait to your specific preferences, this masterpiece is a true work of art that will be cherished for years to come.",
+    "price": "$180",
+    "rating": 4.9,
+    "customization": "Yes",
+    "processing_time": "3-4 weeks",
+    "stock_status": "Made to Order"
+  }
+]

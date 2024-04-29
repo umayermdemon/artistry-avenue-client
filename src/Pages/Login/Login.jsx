@@ -22,6 +22,7 @@ const Login = () => {
 
     signInUser(email, password)
       .then((result) => {
+        navigate(location?.state ? location.state : "/");
         if (result.user) {
 
           const Toast = Swal.mixin({
@@ -39,7 +40,6 @@ const Login = () => {
             icon: "success",
             title: "Signed in successfully",
           });
-          navigate('/')
         }
       })
 
@@ -67,6 +67,7 @@ const Login = () => {
   const handleGoogleLogin=()=>{
     googleSignIn()
     .then((result) => {
+      navigate(location?.state ? location.state : "/");
       if (result.user) {
 
         const Toast = Swal.mixin({
@@ -84,7 +85,6 @@ const Login = () => {
           icon: "success",
           title: "Signed in successfully",
         });
-        navigate('/')
       }
     })
 
@@ -111,6 +111,7 @@ const Login = () => {
   const handleGithubLogin=()=>{
    githubSignIn()
     .then((result) => {
+      navigate(location?.state ? location.state : "/");
       if (result.user) {
 
         const Toast = Swal.mixin({
@@ -128,7 +129,6 @@ const Login = () => {
           icon: "success",
           title: "Signed in successfully",
         });
-        navigate('/')
       }
     })
 

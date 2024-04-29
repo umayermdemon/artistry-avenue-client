@@ -15,14 +15,14 @@ const Banner = () => {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl font-poppins" 
+                className="mb-4 text-xl md:text-4xl lg:text-5xl font-poppins" 
               >
                Discover Your Creativity
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-12 text-base font-poppins"
+                className="mb-12 text-xs md:text-sm lg:text-base font-poppins"
               >
                 Unleash your imagination with our curated collection of art supplies and craft materials. From vibrant paints to intricate beads, find everything you need to bring your artistic visions to life.
               </Typography>
@@ -41,14 +41,14 @@ const Banner = () => {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl font-poppins" 
+                className="mb-4 text-xl md:text-4xl lg:text-5xl font-poppins" 
               >
                Crafting Memories, Crafting Joy
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-12 text-base font-poppins"
+                className="mb-12 text-xs md:text-sm lg:text-base font-poppins"
               >
                Create unforgettable moments with our handpicked selection of crafting essentials. Whether you are a seasoned crafter or just starting out, explore our wide range of quality products designed to inspire and delight.
               </Typography>
@@ -67,14 +67,14 @@ const Banner = () => {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl font-poppins" 
+                className="mb-4 text-xl md:text-4xl lg:text-5xl font-poppins" 
               >
                Artistry Unveiled
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-12 text-base font-poppins"
+                className="mb-12 text-xs md:text-sm lg:text-base font-poppins"
               >
                Experience the beauty of self-expression through our exquisite assortment of artistry tools. Dive into a world of colors, textures, and possibilities, and let your creativity soar to new heights with every stroke and stitch.
               </Typography>
