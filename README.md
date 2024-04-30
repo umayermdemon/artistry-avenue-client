@@ -2,13 +2,13 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-# EverGreen
+# Artistry Avenue
 
 ![photo](https://i.ibb.co/wzhFcYj/Screenshot-2024-04-30-195354.png)
 
 "Welcome to Artistry Avenue: Where Creativity Thrives! Explore our platform dedicated to showcasing artistic expression and connecting creators with enthusiasts. Let your imagination roam free as you embark on a journey through a diverse world of artistry. Join us in celebrating the beauty of creativity!"
 
-# About EverGreen
+# About Artistry Avenue
 
 "At Artistry Avenue, we're passionate about fostering creativity and celebrating artistic expression. Our platform serves as a vibrant community where creators from all backgrounds can showcase their talents and connect with like-minded individuals. Whether you're an artist, designer, photographer, or enthusiast, you'll find inspiration and camaraderie here. Join us in exploring the endless possibilities of artistic endeavor!"
 
