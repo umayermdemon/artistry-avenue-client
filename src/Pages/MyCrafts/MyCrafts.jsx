@@ -10,10 +10,12 @@ const MyCrafts = () => {
   if(loader){
     <Spinner/>
   }
-  const [filter, setFilter] = useState();
+  const [filter, setFilter] = useState([]);
+  const [craft, setCraft]=useState(filter)
   useEffect(() => {
     const filterCraft = crafts.filter((craft) => craft.email === user.email);
     setFilter(filterCraft);
+    setCraft(filterCraft)
   }, [crafts, user.email]);
 
   return (
@@ -34,8 +36,8 @@ const MyCrafts = () => {
       </div>
       <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-full m-2">
-          {filter?.map((filterItem, idx) => (
-            <MyCraft key={idx} filterItem={filterItem} ></MyCraft>
+          {craft?.map((filterItem, idx) => (
+            <MyCraft key={idx} filterItem={filterItem} craft={craft} setCraft={setCraft} ></MyCraft>
           ))}
         </div>
       </div>

@@ -50,7 +50,8 @@ const UpdateCraft = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
+        console.log(data)
+        if (data.modifiedCount>0) {
           Swal.fire({
             title: "Success!",
             text: "Craft Updated Successfully ",
@@ -58,7 +59,6 @@ const UpdateCraft = () => {
           });
         }
       });
-    form.reset();
   };
   return (
     <div className="max-w-7xl mx-auto">
@@ -158,7 +158,6 @@ const UpdateCraft = () => {
 
           <div>
             <Button
-              onClick={handleUpdate}
               type="submit"
               className=" text-white w-full bg-blue-gray-700"
             >

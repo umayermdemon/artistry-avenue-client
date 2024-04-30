@@ -12,9 +12,10 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyCraft = ({ filterItem }) => {
+const MyCraft = ({ filterItem,craft,setCraft }) => {
   const { itemName, price, customization, image, rating, stockStatus, _id } =
     filterItem || {};
+    console.log(filterItem)
   const handleDelete = (id) => {
     console.log(id);
     Swal.fire({
@@ -38,12 +39,14 @@ const MyCraft = ({ filterItem }) => {
                 text: "Your Craft has been deleted.",
                 icon: "success",
               });
-              location.reload();
+              const remaining=craft.filter(item=>item._id !== _id)
+              setCraft(remaining)
             }
           });
       }
     });
   };
+  
   return (
     <div>
       <Card className="w-full ">
