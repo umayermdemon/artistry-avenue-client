@@ -9,6 +9,7 @@ import Home from "../Pages/Home/Home";
 import AllArts from "../Pages/AllArts/AllArts";
 import ViewDetails from "../Components/ViewDetails/ViewDetails";
 import MyCrafts from "../Pages/MyCrafts/MyCrafts";
+import UpdateCraft from "../Pages/UpdateCraft/UpdateCraft";
 
 
 export const router=createBrowserRouter([
@@ -46,6 +47,11 @@ export const router=createBrowserRouter([
         path:'/myCraft',
         element:<PrivateRoute><MyCrafts/></PrivateRoute>,
         loader:()=>fetch("https://art-craft-b9a10-server.vercel.app/crafts")
+      },
+      {
+        path:'/updateCraft/:id',
+        element:<PrivateRoute><UpdateCraft/></PrivateRoute>,
+        loader:({params})=>fetch(`https://art-craft-b9a10-server.vercel.app/crafts/${params.id}`)
       },
     ]
   }
