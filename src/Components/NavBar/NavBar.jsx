@@ -86,25 +86,47 @@ function NavList() {
     <div className="flex  items-center  gap-96">
       <div>
         <ul className="mt-2 mb-4  flex flex-col gap-6 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center text-black">
-          <NavLink to="/">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "border font-medium  font-poppins  text-base p-2 rounded-md border-gray-600"
+                : "font-medium  font-poppins  text-base"
+            }
+          >
             <Typography className="font-medium  font-poppins  text-base">
               Home
             </Typography>
           </NavLink>
 
-          <NavLink to="/allArt">
+          <NavLink to="/allArt"
+           className={({ isActive }) =>
+           isActive
+             ? "border font-medium  font-poppins  text-base p-2 rounded-md border-gray-600"
+             : "font-medium  font-poppins  text-base"
+         }>
             <Typography className="font-medium  font-poppins text-base">
               All Art & craft Items
             </Typography>
           </NavLink>
 
-          <NavLink to="/addCraft">
+          <NavLink to="/addCraft"
+           className={({ isActive }) =>
+           isActive
+             ? "border font-medium  font-poppins  text-base p-2 rounded-md border-gray-600"
+             : "font-medium  font-poppins  text-base"
+         }>
             <Typography className="font-medium  font-poppins text-base">
               Add Craft Item
             </Typography>
           </NavLink>
 
-          <NavLink to="/myCraft">
+          <NavLink to="/myCraft"
+           className={({ isActive }) =>
+           isActive
+             ? "border font-medium  font-poppins  text-base p-2 rounded-md border-gray-600"
+             : "font-medium  font-poppins  text-base"
+         }>
             <Typography className="font-medium  font-poppins text-base">
               My Art & Craft List
             </Typography>
