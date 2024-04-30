@@ -50,8 +50,8 @@ export const router=createBrowserRouter([
       },
       {
         path:'/updateCraft/:id',
-        element:<PrivateRoute><UpdateCraft/></PrivateRoute>,
-        loader:({params})=>fetch(`https://art-craft-b9a10-server.vercel.app/crafts/${params.id}`)
+        element:<UpdateCraft/>,
+        loader: ({ params }) => fetch(`https://art-craft-b9a10-server.vercel.app/crafts/${params.id}`)
       },
     ]
   }

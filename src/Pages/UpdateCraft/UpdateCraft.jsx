@@ -1,14 +1,23 @@
 import { Button, Input, Textarea } from "@material-tailwind/react";
 
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateCraft = () => {
-  const { id } = useParams();
-  const crafts = useLoaderData();
-  console.log(id,crafts);
-  const {_id,itemName, subCategory, price,customization, description,image, processingTime,
-    rating,stockStatus  }=crafts || {}
+  const craft = useLoaderData();
+  console.log(craft);
+  const {
+    _id,
+    itemName,
+    subCategory,
+    price,
+    customization,
+    description,
+    image,
+    processingTime,
+    rating,
+    stockStatus,
+  } = craft || {};
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -149,6 +158,7 @@ const UpdateCraft = () => {
 
           <div>
             <Button
+              onClick={handleUpdate}
               type="submit"
               className=" text-white w-full bg-blue-gray-700"
             >
