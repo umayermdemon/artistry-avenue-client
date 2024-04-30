@@ -1,18 +1,53 @@
+/* eslint-disable react/prop-types */
 import { Button, Card, CardBody, CardFooter, CardHeader, Typography } from "@material-tailwind/react";
 
 import PropTypes from "prop-types"
+import Swal from "sweetalert2";
 
 
 const MyCraft = ({filterItem}) => {
-  const {itemName,  price,customization,image,rating,stockStatus  }=filterItem || {}
+  const {itemName,  price,customization,image,rating,stockStatus,_id  }=filterItem || {}
+  const handleDelete=(id)=>{
+    console.log(id)
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/crafts/${_id}`,{
+          method:'DELETE'
+        })
+        .then(res=>res.json())
+        .then(data=>{
+          if(data.deletedCount>0){
+            Swal.fire({
+              
+              title: "Deleted!",
+              text: "Your Craft has been deleted.",
+              icon: "success"
+            })
+            location.reload()
+          }
+        })
+
+      }
+    });
+    
+
+  }
   return (
     <div>
-       <Card className="w-full m-2">
+      <Card className="w-full ">
       <CardHeader floated={false} color="blue-gray">
         <img
           src={image}
           alt={itemName}
-          className="h-[450px] w-full"
+          className="h-[250px] lg:h-[450px] w-full"
         />
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
       </CardHeader>
@@ -48,7 +83,7 @@ const MyCraft = ({filterItem}) => {
         
       </CardBody>
       <CardFooter className="pt-3 flex justify-between">
-        <Button size="lg" >
+        <Button onClick={()=>handleDelete(_id)} size="lg" >
           Delete
         </Button>
         <Button size="lg" >

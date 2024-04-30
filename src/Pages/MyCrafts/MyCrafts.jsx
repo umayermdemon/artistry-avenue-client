@@ -19,9 +19,9 @@ const MyCrafts = () => {
         <Button>Filter</Button>
       </div>
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-full m-2">
           {filter?.map((filterItem, idx) => (
-            <MyCraft key={idx} filterItem={filterItem}></MyCraft>
+            <MyCraft key={idx} filterItem={filterItem} ></MyCraft>
           ))}
         </div>
       </div>
