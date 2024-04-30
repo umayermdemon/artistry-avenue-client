@@ -1,30 +1,26 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../../Provider/AuthProvider";
-
+import { useEffect, useState } from "react";
+import CraftCard from "../CraftCard/CraftCard";
 
 const CraftSection = () => {
   const [allArts, setAllArts] = useState([]);
-  const {user}=useContext(AuthContext)
-  console.log(user,allArts)
+  console.log(allArts);
 
   useEffect(() => {
-    fetch("http://localhost:5000/crafts")
+    fetch("https://art-craft-b9a10-server.vercel.app/crafts")
       .then((res) => res.json())
       .then((data) => setAllArts(data));
   }, []);
-  // const [filter, setFilter] = useState();
-  // console.log(filter)
 
-  // useEffect(() => {
-  //   const filterCraft = allArts.filter((craft) => craft.email === user.email);
-  //   setFilter(filterCraft);
-  // }, [allArts,user.email]);
-  
-  // const {itemName, subCategory, price,customization, description,image, processingTime,
-  //   rating,stockStatus  }=details || {}
   return (
-    <div>
-      
+    <div className="bg-white mx-2 py-1"> 
+      <div>
+        <h1 className="text-3xl font-bold font-poppins text-center my-4 text-black">Craft Items</h1>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-4 max-w-full m-2">
+        {allArts?.slice(0, 6).map((item, idx) => (
+          <CraftCard key={idx} item={item}></CraftCard>
+        ))}
+      </div>
     </div>
   );
 };

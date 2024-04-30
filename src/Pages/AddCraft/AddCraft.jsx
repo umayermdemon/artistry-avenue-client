@@ -36,7 +36,7 @@ const AddCraft = () => {
     };
     
 console.log(craft)
-    fetch("http://localhost:5000/crafts",{
+    fetch("https://art-craft-b9a10-server.vercel.app/crafts",{
       method:'POST',
       headers:{
         'content-type':'application/json'

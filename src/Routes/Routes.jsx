@@ -40,12 +40,12 @@ export const router=createBrowserRouter([
       {
         path:'/viewDetails/:id',
         element:<PrivateRoute><ViewDetails/></PrivateRoute>,
-        loader:()=>fetch("http://localhost:5000/crafts")
+        loader:()=>fetch("https://art-craft-b9a10-server.vercel.app/crafts")
       },
       {
         path:'/myCraft',
         element:<PrivateRoute><MyCrafts/></PrivateRoute>,
-        loader:()=>fetch("http://localhost:5000/crafts")
+        loader:()=>fetch("https://art-craft-b9a10-server.vercel.app/crafts")
       },
     ]
   }

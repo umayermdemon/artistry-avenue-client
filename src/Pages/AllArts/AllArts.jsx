@@ -6,7 +6,7 @@ const AllArts = () => {
   const [allArts, setAllArts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/crafts")
+    fetch("https://art-craft-b9a10-server.vercel.app/crafts")
       .then((res) => res.json())
       .then((data) => setAllArts(data));
   }, []);
@@ -14,7 +14,7 @@ const AllArts = () => {
 
   return (
     <div>
-      <Card className="h-full max-w-full mx-2 overflow-scroll lg:overflow-auto">
+      <Card className="h-full max-w-full mx-2 overflow-scroll  lg:overflow-auto">
         <table className="w-full min-w-max table-auto text-left">
           <thead>
             <tr>
