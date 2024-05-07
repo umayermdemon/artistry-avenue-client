@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import CraftCard from "../CraftCard/CraftCard";
-
 const CraftSection = () => {
   const [allArts, setAllArts] = useState([]);
-  console.log(allArts);
+  const url="https://art-craft-b9a10-server.vercel.app/crafts"
 
   useEffect(() => {
-    fetch("https://art-craft-b9a10-server.vercel.app/crafts")
+  
+    fetch(url)
       .then((res) => res.json())
       .then((data) => setAllArts(data));
   }, []);

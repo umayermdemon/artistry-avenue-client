@@ -6,12 +6,12 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash, FaGithub } from "react-icons/fa";
+import axios from "axios";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { signInUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const location = useLocation();
-  console.log(location);
   const navigate = useNavigate();
 
   const handleLogIn = (e) => {
@@ -19,12 +19,20 @@ const Login = () => {
     const form = new FormData(e.currentTarget);
     const email = form.get("email");
     const password = form.get("password");
-    console.log(email, password);
 
     signInUser(email, password)
       .then((result) => {
-        navigate(location?.state ? location.state : "/");
-        if (result.user) {
+        const loggedUser=result.user;
+        const user={email}
+        
+        //get access token
+        axios.post('http://localhost:5000/jwt', user,{withCredentials:true})
+        .then(res=>{
+          if(res.data.success){
+            navigate(location?.state ? location.state : "/");
+          }
+        })
+        if (loggedUser) {
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -67,8 +75,9 @@ const Login = () => {
   const handleGoogleLogin = () => {
     googleSignIn()
       .then((result) => {
-        navigate(location?.state ? location.state : "/");
-        if (result.user) {
+        const loggedUser=result.user
+        // navigate(location?.state ? location.state : "/");
+        if (loggedUser) {
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
@@ -110,8 +119,9 @@ const Login = () => {
   const handleGithubLogin = () => {
     githubSignIn()
       .then((result) => {
-        navigate(location?.state ? location.state : "/");
-        if (result.user) {
+        const loggedUser=result.user
+        // navigate(location?.state ? location.state : "/");
+        if (loggedUser) {
           const Toast = Swal.mixin({
             toast: true,
             position: "top-end",
