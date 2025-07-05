@@ -26,7 +26,7 @@ const Login = () => {
         const user={email}
         
         //get access token
-        axios.post('http://localhost:5000/jwt', user,{withCredentials:true})
+        axios.post('https://art-craft-b9a10-server.vercel.app/jwt', user)
         .then(res=>{
           if(res.data.success){
             navigate(location?.state ? location.state : "/");
@@ -76,7 +76,7 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         const loggedUser=result.user
-        // navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/");
         if (loggedUser) {
           const Toast = Swal.mixin({
             toast: true,
@@ -120,7 +120,7 @@ const Login = () => {
     githubSignIn()
       .then((result) => {
         const loggedUser=result.user
-        // navigate(location?.state ? location.state : "/");
+        navigate(location?.state ? location.state : "/");
         if (loggedUser) {
           const Toast = Swal.mixin({
             toast: true,

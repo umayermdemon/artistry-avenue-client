@@ -17,7 +17,6 @@ const MyCraft = ({ filterItem,craft,setCraft }) => {
     filterItem || {};
     console.log(filterItem)
   const handleDelete = (id) => {
-    console.log(id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -39,7 +38,7 @@ const MyCraft = ({ filterItem,craft,setCraft }) => {
                 text: "Your Craft has been deleted.",
                 icon: "success",
               });
-              const remaining=craft.filter(item=>item._id !== _id)
+              const remaining=craft.filter(item=>item._id !== id)
               setCraft(remaining)
             }
           });
